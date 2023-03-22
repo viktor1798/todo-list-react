@@ -14,6 +14,9 @@ export const TaskItem = (props) => {
     setIsCheked(!isChecked);
   };
 
+  const deleteThisTask=()=>{
+    props.deleteTask(props.task.id)
+  }
   return (
     <li className={s.task}>
       <div className={s["task-group"]}>
@@ -36,7 +39,7 @@ export const TaskItem = (props) => {
         <button className="btn" aria-label={`Update ${props.task.name} Task`}>
           <PencilSquareIcon width={24} height={24} />
         </button>
-        <button className="btn" aria-label={`Update ${props.task.name} Task`}>
+        <button className="btn" onClick={deleteThisTask} aria-label={`Delete ${props.task.name} Task`}>
           <TrashIcon width={24} height={24} />
         </button>
       </div>

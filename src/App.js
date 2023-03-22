@@ -9,13 +9,16 @@ function App() {
   const addTask= (task)=>{
     setTasks(prevState=>[...prevState,task])
   }
+  const deleteTask=(id)=>{
+    setTasks(prevState=>prevState.filter(t=>t.id !==id))
+  }
   return (
     <div className="container">
       <header>
         <h1>My Task</h1>
       </header>
       <WriteForm addTask={addTask}/>
-      {tasks && <ItemList tasks={tasks}/>}
+      {tasks && <ItemList tasks={tasks} deleteTask={deleteTask}/>}
     </div>
   );
 }
