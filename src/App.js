@@ -1,12 +1,16 @@
 import './App.css';
+import WriteForm from './components/writeForm';
 
 function App() {
+  const addTask= (task)=>{
+    console.log(task)
+  }
   return (
     <div className="container">
-      <header className="App-header">
+      <header>
         <h1>My Task</h1>
       </header>
-      form
+      <WriteForm addTask={addTask}/>
     </div>
   );
 }
