@@ -12,6 +12,7 @@ export const TaskItem = (props) => {
 
   const checkboxChange = () => {
     setIsCheked(!isChecked);
+    props.toogleTask(props.task.id)
   };
 
   const deleteThisTask=()=>{

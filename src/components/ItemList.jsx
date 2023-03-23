@@ -9,7 +9,7 @@ export const ItemList = (props) => {
       {props.tasks
         .sort((a, b) => b.id - a.id)
         .map((task) => (
-          <TaskItem key={task.id} task={task} deleteTask={props.deleteTask}/>
+          <TaskItem key={task.id} task={task} deleteTask={props.deleteTask} toogleTask={props.toogleTask}/>
         ))}
     </ul>
   );
